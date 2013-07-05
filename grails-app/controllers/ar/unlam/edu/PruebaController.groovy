@@ -1,7 +1,6 @@
 package ar.unlam.edu
 
 import grails.plugins.springsecurity.SpringSecurityService
-import org.example.SecUser
 
 class PruebaController {
 	def springSecurityService

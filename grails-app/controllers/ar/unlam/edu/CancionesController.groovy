@@ -5,7 +5,7 @@ import ar.unlam.edu.Lista
 import ar.unlam.edu.Comentario
 
 class CancionesController {
-			
+	def springSecurityService
 	def index(){
 		def canciones = Cancion.list()	
 		render view:'/canciones/Canciones',model:[canciones:canciones]
@@ -30,11 +30,17 @@ class CancionesController {
 		def listaReproduccion = new Lista(listaOriginalId:'1',name:params.nombreLista, canciones:canciones)
 		listaReproduccion.save(true)
 		
+		def user = springSecurityService.principal
+//		SecUser usuario = new SecUser()
+		user.listasDeCanciones(listaReproduccion)
 		redirect action:'listarListas'
 	}
 	
 	def listarListas(){
-		def listas = Lista.list().reverse()
+		def user = springSecurityService.principal
+		//user.listasDeCanciones//falta recuperar la lista
+		def listas =  user.listasDeCanciones.list().reverse()
+		//Lista.list().reverse()
 		render view:'/listaDeCanciones/verListaDeCanciones',model:[listas:listas]
 	}
 	

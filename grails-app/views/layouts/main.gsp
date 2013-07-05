@@ -16,10 +16,12 @@
 </head>
 <body>
 
+<body>
+
 <div id="slider">
     <div id="templatemo_header_wrapper">
         <div id="templatemo_header">
-            
+            <div id="header"><h1><a href="http://www.templatemo.com">Free CSS Template</a></h1></div>
         </div>
     </div>
     
@@ -30,9 +32,7 @@
         	<div class="scroll">
         		<div class="scrollContainer">
               	
-                    <div class="panel" id="home">
-                    	<g:layoutBody/>
-                    </div> <!-- end of contact us -->
+                    <g:layoutBody/>
 				
             	</div>
 			</div>
@@ -43,9 +43,9 @@
     	<div id="templatemo_sidebar">
         	<div id="menu">
                 <ul class="navigation">
-                	<li><a href="#home" >Home</a></li>
-                    <li><a href="http://localhost:8080/ProyectoGrails/crearListaDeCanciones">Canciones</a></li>
-                    <li><a href="http://localhost:8080/ProyectoGrails/login">Login</a></li>
+                	<li><a href="#home" class="selected">Home</a></li>
+                    <li><a href="#aboutus">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contactus">Contact Us</a></li>
                 </ul>
@@ -57,6 +57,7 @@
     <div id="templatemo_footer_wrapper">
         <div id="templatemo_footer">
         
+            Copyright © 2048 <a href="#">Your Company Name</a> | Designed by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
             
             <div class="cleaner"></div>
 		</div>        

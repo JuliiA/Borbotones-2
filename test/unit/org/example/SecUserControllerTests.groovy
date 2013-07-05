@@ -3,6 +3,9 @@ package org.example
 
 
 import org.junit.*
+
+import ar.unlam.edu.SecUser;
+import ar.unlam.edu.SecUserController;
 import grails.test.mixin.*
 
 @TestFor(SecUserController)
