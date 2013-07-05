@@ -1,4 +1,3 @@
-<html>
 <head>
 <title><g:layoutTitle default="Grails"/></title>
 

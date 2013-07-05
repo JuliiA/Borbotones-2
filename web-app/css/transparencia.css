@@ -1,0 +1,8 @@
+#divTransparencia{
+ width:150px;
+ text-align:center;
+ padding:60px;
+ border-radius:5px;
+ border:solid 1px #DEDEDE;
+ background:rgba(204,204,204,0.3);
+ }

@@ -7,8 +7,8 @@ class PruebaController {
 	def springSecurityService
     def index() { 
 		
-		def user = springSecurityService.principal
-		String nombre = user.username
+//		def user = springSecurityService.principal
+//		String nombre = user.username
 		render view : 'prueba'
 	}
 }
