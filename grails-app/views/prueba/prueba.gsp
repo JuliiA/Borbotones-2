@@ -1,0 +1,1 @@
+<sec:loggedInUserInfo field="username" />
