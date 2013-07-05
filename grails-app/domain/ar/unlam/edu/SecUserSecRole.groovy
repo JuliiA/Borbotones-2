@@ -2,7 +2,6 @@ package ar.unlam.edu
 
 import org.apache.commons.lang.builder.HashCodeBuilder
 
-
 class SecUserSecRole implements Serializable {
 
 	SecUser secUser

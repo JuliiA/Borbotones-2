@@ -1,13 +1,12 @@
 package ar.unlam.edu
 
-
 class SecUser {
 
 	transient springSecurityService
 
 	String username
 	String password
-	static hasMany = [listasDeCanciones:Lista]
+	static hasMany = [listaDeCanciones:Lista]
 	boolean enabled = true
 	boolean accountExpired = false
 	boolean accountLocked = false
@@ -17,6 +16,7 @@ class SecUser {
 		username blank: false, unique: true
 		password blank: false
 	}
+	
 
 	static mapping = {
 		password column: '`password`'

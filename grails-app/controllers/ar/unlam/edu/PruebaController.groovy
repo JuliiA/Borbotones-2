@@ -10,4 +10,14 @@ class PruebaController {
 //		String nombre = user.username
 		render view : 'prueba'
 	}
+	
+	def prueba2(){
+		def user = springSecurityService.principal
+		Cancion canciones = new Cancion()
+		String nombre = ""
+		user.listaDeCanciones.each{
+			nombre += it.Cancion.name
+		}
+		render view : "pruebaListas", model:[nombre:"$nombre"]
+	}
 }

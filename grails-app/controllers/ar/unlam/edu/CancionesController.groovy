@@ -27,13 +27,15 @@ class CancionesController {
 	def crearLista(){		
 		def idCanciones = params.list('idCancion')*.toLong()
 		def canciones = Cancion.findAllByCancionOriginalIdInList(idCanciones)
-		def listaReproduccion = new Lista(listaOriginalId:'1',name:params.nombreLista, canciones:canciones)
+		Lista listaReproduccion = new Lista(listaOriginalId:'1',name:params.nombreLista, canciones:canciones)
 		listaReproduccion.save(true)
 		
 		def user = springSecurityService.principal
-//		SecUser usuario = new SecUser()
-		user.listasDeCanciones(listaReproduccion)
-		redirect action:'listarListas'
+		SecUser usuario = user.addToListaDeCanciones(listaReproduccion).save(true)
+		
+		
+		springSecurityService.principal = usuario
+		redirect controller:'Prueba', action:'prueba2'
 	}
 	
 	def listarListas(){

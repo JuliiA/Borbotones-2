@@ -10,7 +10,7 @@ class BusquedaDeCancionController {
 	}	 
 	
 	def busqueda(){
-		render view:'/busquedaDeCancion/buscarCancion'			
+		render view:'buscarCancion'			
 	}
 	
 	def buscarCancion(){
