@@ -1,7 +1,7 @@
 package ar.unlam.edu
 
 class Lista {
-	Long listaOriginalId
+	Integer listaOriginalId
 	String name
 	SecUser usuario
 	static hasMany = [canciones:Cancion]

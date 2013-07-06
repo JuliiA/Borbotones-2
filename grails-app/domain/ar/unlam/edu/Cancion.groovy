@@ -7,7 +7,7 @@ class Cancion {
 	Integer estrella
 	String url
 	Long cancionOriginalId	
-	//static belongsTo= [lista:Lista]
+	//static belongsTo= [listaDeCancion:Lista]
 	
 	static constraints = {
 		cancionOriginalId nullable: true

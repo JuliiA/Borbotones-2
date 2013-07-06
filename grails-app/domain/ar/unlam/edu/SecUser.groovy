@@ -6,7 +6,7 @@ class SecUser {
 
 	String username
 	String password
-	static hasMany = [listaDeCanciones:Lista]
+	static hasMany = [listas:Lista]
 	boolean enabled = true
 	boolean accountExpired = false
 	boolean accountLocked = false

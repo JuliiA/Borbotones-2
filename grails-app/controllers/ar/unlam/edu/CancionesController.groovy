@@ -6,6 +6,7 @@ import ar.unlam.edu.Comentario
 
 class CancionesController {
 	def springSecurityService
+	def secUser = springSecurityService.principal
 	def index(){
 		def canciones = Cancion.list()	
 		render view:'/canciones/Canciones',model:[canciones:canciones]
@@ -25,24 +26,24 @@ class CancionesController {
 		}
 	
 	def crearLista(){		
+		
 		def idCanciones = params.list('idCancion')*.toLong()
 		def canciones = Cancion.findAllByCancionOriginalIdInList(idCanciones)
-		Lista listaReproduccion = new Lista(listaOriginalId:'1',name:params.nombreLista, canciones:canciones)
+		def listaReproduccion = new Lista(listaOriginalId:'1',name:params.nombreLista, canciones:canciones, usuario: secUser)
 		listaReproduccion.save(true)
+		secUser.addToListas(listas:canciones)
+//		def cancion1 = new Cancion(author: 'No te va a gustar', name:'Sin pena ni gloria', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (1).mp3', cancionOriginalId:"1")
+//		cancion1.save(flush:true)
+//			secUser.addToListas(cancion1)
 		
-		def user = springSecurityService.principal
-		SecUser usuario = user.addToListaDeCanciones(listaReproduccion).save(true)
+//		SecUser usuario = new SecUser()
 		
-		
-		springSecurityService.principal = usuario
 		redirect controller:'Prueba', action:'prueba2'
 	}
 	
 	def listarListas(){
-		def user = springSecurityService.principal
-		//user.listasDeCanciones//falta recuperar la lista
-		def listas =  user.listasDeCanciones.list().reverse()
-		//Lista.list().reverse()
+		
+		def listas = Lista.list().reverse()
 		render view:'/listaDeCanciones/verListaDeCanciones',model:[listas:listas]
 	}
 	
