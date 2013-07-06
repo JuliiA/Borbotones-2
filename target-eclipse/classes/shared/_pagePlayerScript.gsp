@@ -1,5 +1,5 @@
-<script type="text/javascript"
-	src="<g:createLinkTo dir="${pContextPath}/js" file="pagePlayer-min.js" />">
+<script type="text/javascript" 
+ src="<g:createLinkTo dir="${pContextPath}/js" file="pagePlayer-min.js" />" >
 </script>
 <script type="text/javascript">
 soundManager.debugMode = false; 

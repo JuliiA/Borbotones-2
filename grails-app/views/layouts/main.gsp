@@ -43,11 +43,15 @@
     	<div id="templatemo_sidebar">
         	<div id="menu">
                 <ul class="navigation">
-                	<li><a href="#home" class="selected">Home</a></li>
-                    <li><a href="#aboutus">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contactus">Contact Us</a></li>
+                	<ul class="navigation">
+					<li><g:link action="logout" controller="Login">Salir</g:link></li>
+					<li><g:link action="busqueda" controller="busquedaDeCancion">Buscar</g:link></li>
+					<li><g:link action="mostrarBusquedas" controller="busquedaDeCancion">Busquedas</g:link></li>
+					<li><g:link action="mejorPuntuacion" controller="canciones">Ranking</g:link></li>
+					<h5>Perfil:</h5>
+					<li><g:link action="defineModelo" controller="Canciones">Crear lista</g:link></li>
+					<li><g:link action="listarListas" controller="Canciones">Ver mis listas</g:link></li>
+				</ul>	
                 </ul>
                 <div class="cleaner"></div>
             </div>

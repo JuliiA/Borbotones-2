@@ -1,5 +1,5 @@
 import ar.unlam.edu.Cancion
-import ar.unlam.edu.User
+
 import ar.unlam.edu.Lista
 
 class BootStrap {
@@ -7,13 +7,13 @@ class BootStrap {
     def init = { servletContext ->
 		
 	// Canciones 
-		def cancion1 = new Cancion(author: 'No te va a gustar', name:'Sin pena ni gloria', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (1).mp3', cancionOriginalId:"1")
+		def cancion1 = new Cancion(author: 'No te va a gustar', name:'Sin pena ni gloria', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (1).mp3', cancionOriginalId:1)
 		cancion1.save(flush:true)
-		def cancion2 = new Cancion(author: 'No te va a gustar', name:'Nada fue en vano', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (2).mp3', cancionOriginalId:"2")
+		def cancion2 = new Cancion(author: 'No te va a gustar', name:'Nada fue en vano', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (2).mp3', cancionOriginalId:2)
 		cancion2.save(flush:true)
-		def cancion3 = new Cancion(author: 'No te va a gustar', name:'A las nueve', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (3).mp3', cancionOriginalId:"3")
+		def cancion3 = new Cancion(author: 'No te va a gustar', name:'A las nueve', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (3).mp3', cancionOriginalId:3)
 		cancion3.save(flush:true)
-		def cancion4 = new Cancion(author: 'No te va a gustar', name:'Como brillaba tu alma', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (4).mp3', cancionOriginalId:"4")
+		def cancion4 = new Cancion(author: 'No te va a gustar', name:'Como brillaba tu alma', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (4).mp3', cancionOriginalId:4)
 		cancion4.save(flush:true)
 		def cancion5 = new Cancion(author: 'No te va a gustar', name:'Tan lejos', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (5).mp3', cancionOriginalId:"5")
 		cancion5.save(flush:true)

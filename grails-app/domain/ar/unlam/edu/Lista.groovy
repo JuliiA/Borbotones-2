@@ -3,7 +3,7 @@ package ar.unlam.edu
 class Lista {
 	Integer listaOriginalId
 	String name
-	SecUser usuario
+	//static belongsTo = [usuario:SecUser]
 	static hasMany = [canciones:Cancion]
 	
 	

@@ -1,6 +1,6 @@
 package ar.unlam.edu
 import ar.unlam.edu.Cancion
-import ar.unlam.edu.User
+
 import ar.unlam.edu.Lista
 
 class BusquedaDeCancionController {

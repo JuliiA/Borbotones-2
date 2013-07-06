@@ -1,5 +1,5 @@
-<script type="text/javascript"
-	src="<g:createLinkTo dir="${pContextPath}/js" file="inlineplayer-min.js" />">
+<script type="text/javascript" 
+ src="<g:createLinkTo dir="${pContextPath}/js" file="inlineplayer-min.js" />" >
 </script>
 <script type="text/javascript">
 var inlinePlayer = null;

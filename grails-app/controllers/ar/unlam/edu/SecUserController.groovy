@@ -29,7 +29,7 @@ class SecUserController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'secUser.label', default: 'SecUser'), secUserInstance.id])
-        redirect(action: "show", id: secUserInstance.id)
+        render view:("../login/auth")//, id: secUserInstance.id)
     }
 
     def show(Long id) {

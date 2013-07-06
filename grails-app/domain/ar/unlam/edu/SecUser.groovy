@@ -20,6 +20,7 @@ class SecUser {
 
 	static mapping = {
 		password column: '`password`'
+		listas fetch:"join"
 	}
 
 	Set<SecRole> getAuthorities() {

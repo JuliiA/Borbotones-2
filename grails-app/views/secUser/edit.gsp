@@ -1,4 +1,4 @@
-<%@ page import="org.example.SecUser" %>
+<%@ page import="ar.unlam.edu.SecUser" %>
 <!DOCTYPE html>
 <html>
 	<head>

@@ -6,7 +6,7 @@ import ar.unlam.edu.Comentario
 
 class CancionesController {
 	def springSecurityService
-	def secUser = springSecurityService.principal
+	
 	def index(){
 		def canciones = Cancion.list()	
 		render view:'/canciones/Canciones',model:[canciones:canciones]
@@ -25,27 +25,29 @@ class CancionesController {
 		render view:'/listaDeCanciones/ListaDeCanciones',model:[canciones:canciones]
 		}
 	
-	def crearLista(){		
-		
+	def crearLista(){	
 		def idCanciones = params.list('idCancion')*.toLong()
 		def canciones = Cancion.findAllByCancionOriginalIdInList(idCanciones)
-		def listaReproduccion = new Lista(listaOriginalId:'1',name:params.nombreLista, canciones:canciones, usuario: secUser)
+		def secUser = springSecurityService.principal
+		def listaReproduccion = new Lista(listaOriginalId:1, name: params.nombreLista, canciones:canciones, usuario:secUser)
 		listaReproduccion.save(true)
-		secUser.addToListas(listas:canciones)
-//		def cancion1 = new Cancion(author: 'No te va a gustar', name:'Sin pena ni gloria', estrella:0,puntuacion:0, url:'http://localhost:80/Musica/pista (1).mp3', cancionOriginalId:"1")
-//		cancion1.save(flush:true)
-//			secUser.addToListas(cancion1)
 		
-//		SecUser usuario = new SecUser()
+		String nombre = listaReproduccion.name
+		//def idLista = listaReproduccion.id
+		//if(idLista!=null)
+		redirect action:'listarListas', params:[nombreDeLista:nombre]
 		
-		redirect controller:'Prueba', action:'prueba2'
-	}
-	
-	def listarListas(){
-		
-		def listas = Lista.list().reverse()
-		render view:'/listaDeCanciones/verListaDeCanciones',model:[listas:listas]
-	}
+}
+
+	def listarListas(String nombreDeLista){
+		String nombre = nombreDeLista
+		def l = Lista.findByName(nombre)
+		//def listas = Lista.findById(miUser)
+		if(l!=null)
+		render view:'../listaDeCanciones/verListaDeCanciones',model:[listas:l]
+		else
+		render view:'prueba'
+}
 	
 	def download(Long idCancion){		
 		def cancion = Cancion.findByCancionOriginalId(idCancion)
