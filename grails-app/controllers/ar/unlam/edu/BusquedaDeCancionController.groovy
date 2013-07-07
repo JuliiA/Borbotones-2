@@ -6,11 +6,11 @@ import ar.unlam.edu.Lista
 class BusquedaDeCancionController {
 
      def index() { 
-		
+		 render view:'buscarCancion'
 	}	 
 	
 	def busqueda(){
-		render view:'buscarCancion'			
+		render view:'buscarCancion'
 	}
 	
 	def buscarCancion(){

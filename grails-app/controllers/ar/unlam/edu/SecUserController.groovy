@@ -2,8 +2,6 @@ package ar.unlam.edu
 
 import org.springframework.dao.DataIntegrityViolationException
 
-import ar.unlam.edu.SecUser;
-
 class SecUserController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -29,7 +27,7 @@ class SecUserController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'secUser.label', default: 'SecUser'), secUserInstance.id])
-        render view:("../login/auth")//, id: secUserInstance.id)
+        redirect(action: "show", id: secUserInstance.id)
     }
 
     def show(Long id) {
